@@ -9,5 +9,10 @@ mongodb://admin:m0ng0d4t4@localhost:27017/
 
 => building docker image
 docker build -t users-api:8.0.1 .
-docker run -d unless-stopped --name users-api -p 8085:8080 users-api:8.0.1
-docker container logs events-backend
+
+=> running container
+=> DONT FORGET TO BE LOGGED INTO DOCKER DESKTOP
+docker run -d --name users-api -p 8085:8080 -e APP_MONGODB_CS=mongodb://admin:m0ng0d4t4@192.168.1.254:27018 users-api:8.0.1
+
+=> accessing container logs
+docker container logs users-api

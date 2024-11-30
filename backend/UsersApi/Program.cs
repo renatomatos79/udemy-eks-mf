@@ -1,3 +1,4 @@
+using UsersApi.Helpers;
 using UsersApi.Model.Settings;
 using UsersApi.Repository;
 
@@ -15,7 +16,7 @@ builder.Services.AddSingleton<IDbSettngs>(_ =>
 {
     return new DbSettngs 
     { 
-        ConnectionString = "mongodb://admin:m0ng0d4t4@localhost:27018/", 
+        ConnectionString = builder.GetMongoDbConnectionString(), 
         DBName = "frota" 
     };
 });

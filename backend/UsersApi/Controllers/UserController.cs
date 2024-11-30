@@ -6,7 +6,7 @@ using UsersApi.Repository;
 
 namespace UsersApi.Controllers
 {
-    [Route("users")]
+    [Route("api")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -19,13 +19,13 @@ namespace UsersApi.Controllers
             _userRepository = userRepository;
         }
 
-        [HttpGet("/")]
+        [HttpGet("users/")]
         public async Task<IResult> GetAll()
         {
             return await Task.FromResult(Results.Ok(_userRepository.GetAll().Select(s => s.ToResponseModel())));
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("users/{id}")]
         public async Task<IResult> GetById(string id)
         {
             var _id = ConvertHelper.StringToGuid(id);
@@ -43,7 +43,7 @@ namespace UsersApi.Controllers
             return await Task.FromResult(Results.Ok(user.ToResponseModel()));
         }
 
-        [HttpPost("/")]
+        [HttpPost("users/")]
         public async Task<IResult> Create([FromBody] UserCreateRequestModel request)
         {
             var db = UserDBModel.FromCreateRequestModel(request);
@@ -51,7 +51,7 @@ namespace UsersApi.Controllers
             return await Task.FromResult(Results.Ok(_userRepository.GetById(id)));
         }
 
-        [HttpPut("/{id}")]
+        [HttpPut("users/{id}")]
         public async Task<IResult> Update(string id, [FromBody] UserUpdateRequestModel request)
         {
             var _id = ConvertHelper.StringToGuid(id);
