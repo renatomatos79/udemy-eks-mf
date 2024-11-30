@@ -1,12 +1,14 @@
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using UsersApi.Helpers;
-using UsersApi.Model;
 using UsersApi.Model.Db;
+using UsersApi.Model.Request;
 using UsersApi.Repository;
 
 namespace UsersApi.Controllers
 {
-    [Route("api")]
+    [Route("api/users")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -19,13 +21,13 @@ namespace UsersApi.Controllers
             _userRepository = userRepository;
         }
 
-        [HttpGet("users/")]
+        [HttpGet]
         public async Task<IResult> GetAll()
         {
             return await Task.FromResult(Results.Ok(_userRepository.GetAll().Select(s => s.ToResponseModel())));
         }
 
-        [HttpGet("users/{id}")]
+        [HttpGet("{id}")]
         public async Task<IResult> GetById(string id)
         {
             var _id = ConvertHelper.StringToGuid(id);
@@ -43,7 +45,7 @@ namespace UsersApi.Controllers
             return await Task.FromResult(Results.Ok(user.ToResponseModel()));
         }
 
-        [HttpPost("users/")]
+        [HttpPost]
         public async Task<IResult> Create([FromBody] UserCreateRequestModel request)
         {
             var db = UserDBModel.FromCreateRequestModel(request);
@@ -51,7 +53,7 @@ namespace UsersApi.Controllers
             return await Task.FromResult(Results.Ok(_userRepository.GetById(id)));
         }
 
-        [HttpPut("users/{id}")]
+        [HttpPut("{id}")]
         public async Task<IResult> Update(string id, [FromBody] UserUpdateRequestModel request)
         {
             var _id = ConvertHelper.StringToGuid(id);
@@ -73,8 +75,9 @@ namespace UsersApi.Controllers
             return await Task.FromResult(Results.Ok(user.ToResponseModel()));
         }
 
-        [HttpDelete("users/{id}")]
-        public async Task<IResult> Delete(string id)
+       
+        [HttpPatch("{id}")]
+        public async Task<IResult> PatchUser(string id, [FromBody] JsonPatchDocument<UserPatchRequestModel> patchDoc)
         {
             var _id = ConvertHelper.StringToGuid(id);
             if (_id is null)
@@ -88,9 +91,22 @@ namespace UsersApi.Controllers
                 return await Task.FromResult(Results.NotFound());
             }
 
-            _userRepository.Delete(user);
-
-            return await Task.FromResult(Results.NoContent());
-        }
+            // Apply patch request on temp object
+            try
+            {
+                var userPatch = user.ToUserPatch();
+                patchDoc.ApplyTo(userPatch);
+                
+                // updates DB
+                _userRepository.Update(user.ApplyPatch(userPatch));
+            }
+            catch (Microsoft.AspNetCore.JsonPatch.Exceptions.JsonPatchException)
+            {
+                var error = "Path operator has only support to \"add, remove, replace, move, copy, test\" and can only be applied on: Roles, IsActive and ImageUrl fields";
+                return await Task.FromResult(Results.BadRequest(error));
+            }          
+            
+            return await Task.FromResult(Results.Ok(user.ToResponseModel()));
+        }        
     }
 }

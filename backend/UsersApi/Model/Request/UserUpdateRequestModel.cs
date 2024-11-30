@@ -1,8 +1,7 @@
-﻿namespace UsersApi.Model
+﻿namespace UsersApi.Model.Request
 {
-    public class UserResponseModel
+    public class UserUpdateRequestModel
     {
-        public required Guid Id { get; set; }
         public required string Name { get; set; }
         public required string Email { get; set; }
     }

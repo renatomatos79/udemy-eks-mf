@@ -23,13 +23,13 @@ docker run -d --name udemy-react-mf-dashboard -e UDEMY_GOOGLE_MAPS_API_KEY=%UDEM
 docker container logs udemy-react-mf-dashboard
 ```
 
-## Build Marketing
+## Build Admin
 ```sh
-cd marketing
+cd admin
 npm i && npm ci
-docker build -t udemy-react-mf-marketing:1.0.1 .
-docker run -d --name udemy-react-mf-marketing -p 8081:8081 udemy-react-mf-marketing:1.0.1
-docker container logs udemy-react-mf-marketing
+docker build -t udemy-react-mf-admin:1.0.1 .
+docker run -d --name udemy-react-mf-admin -p 8081:8081 udemy-react-mf-admin:1.0.1
+docker container logs udemy-react-mf-admin
 ```
 
 ## Build Root
