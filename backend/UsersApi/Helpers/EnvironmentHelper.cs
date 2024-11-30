@@ -21,6 +21,6 @@ public static class EnvironmentHelper
 
     public static string GetMongoDbConnectionString(this WebApplicationBuilder builder)
     {
-        return builder.GetValue("APP_MONGODB_CS", "mongodb://admin:m0ng0d4t4@localhost:27018/");
+        return builder.GetValue("APP_MONGODB_CS", "mongodb://admin:m0ng0d4t4@localhost:27019/");
     }    
 }

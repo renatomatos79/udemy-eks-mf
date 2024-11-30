@@ -72,5 +72,25 @@ namespace UsersApi.Controllers
             
             return await Task.FromResult(Results.Ok(user.ToResponseModel()));
         }
+
+        [HttpDelete("users/{id}")]
+        public async Task<IResult> Delete(string id)
+        {
+            var _id = ConvertHelper.StringToGuid(id);
+            if (_id is null)
+            {
+                return await Task.FromResult(Results.BadRequest("Invalid ID"));
+            }
+
+            var user = _userRepository.GetById(_id.Value);
+            if (user == null)
+            {
+                return await Task.FromResult(Results.NotFound());
+            }
+
+            _userRepository.Delete(user);
+
+            return await Task.FromResult(Results.NoContent());
+        }
     }
 }
