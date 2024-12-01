@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceRequests.PoliceStations.Api", "PoliceStationsApi\ServiceRequests.PoliceStations.Api.csproj", "{94859E6B-CF0E-4569-A4F3-BF3A73032974}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceRequests.PoliceStations.Api", "ServiceRequests.PoliceStations.Api\ServiceRequests.PoliceStations.Api.csproj", "{94859E6B-CF0E-4569-A4F3-BF3A73032974}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceRequests.Users.Api", "UsersApi\ServiceRequests.Users.Api.csproj", "{175CEA21-E0C4-481F-9C20-E284BBAD420E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceRequests.Users.Api", "ServiceRequests.Users.Api\ServiceRequests.Users.Api.csproj", "{175CEA21-E0C4-481F-9C20-E284BBAD420E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceRequests.Common", "ServiceRequests.Common\ServiceRequests.Common.csproj", "{C0D90AB5-98E3-41E2-833C-64277C2D6CB4}"
 EndProject
