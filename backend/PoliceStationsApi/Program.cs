@@ -1,8 +1,8 @@
 using Microsoft.OpenApi.Models;
-using PoliceStationsApi.Helpers;
-using PoliceStationsApi.Model.Settings;
 using PoliceStationsApi.Repository;
-using PoliceStationsApi.Services;
+using ServiceRequests.Common.Helpers;
+using ServiceRequests.Common.Model.Settings;
+using ServiceRequests.Common.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,8 +66,8 @@ builder.Services.AddSingleton<IDbSettngs>(_ =>
 {
     return new DbSettngs 
     { 
-        ConnectionString = builder.GetMongoDbConnectionString(), 
-        DBName = "frota" 
+        ConnectionString = builder.GetMongoDbConnectionString(),
+        DBName = "udemy-mf-admin"
     };
 });
 

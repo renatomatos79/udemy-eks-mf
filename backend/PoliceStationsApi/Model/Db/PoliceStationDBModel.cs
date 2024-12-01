@@ -1,5 +1,6 @@
 ﻿using PoliceStationsApi.Model.Request;
 using PoliceStationsApi.Model.Response;
+using ServiceRequests.Common.Model.Db;
 
 namespace PoliceStationsApi.Model.Db
 {

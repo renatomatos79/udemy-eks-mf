@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using UsersApi.Helpers;
+using ServiceRequests.Common.Helpers;
 using UsersApi.Model.Db;
 using UsersApi.Model.Request;
 using UsersApi.Repository;

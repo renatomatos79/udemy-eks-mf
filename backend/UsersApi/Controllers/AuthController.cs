@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using ServiceRequests.Common.Services;
 using UsersApi.Controllers;
 using UsersApi.Model.Request;
 using UsersApi.Model.Response;

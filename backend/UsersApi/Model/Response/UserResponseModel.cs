@@ -1,4 +1,6 @@
-﻿namespace UsersApi.Model.Response
+﻿using ServiceRequests.Common.Model.Response;
+
+namespace UsersApi.Model.Response
 {
     public class UserResponseModel : BaseResponseModel
     {

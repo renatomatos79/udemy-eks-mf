@@ -1,4 +1,6 @@
-﻿namespace PoliceStationsApi.Model.Response
+﻿using ServiceRequests.Common.Model.Response;
+
+namespace PoliceStationsApi.Model.Response
 {
     public class PoliceStationResponseModel : BaseResponseModel
     {

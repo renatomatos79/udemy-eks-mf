@@ -1,6 +1,6 @@
-﻿using UsersApi.Model.Db;
-using UsersApi.Model.Settings;
-using UsersApi.Repository.Mongo;
+﻿using ServiceRequests.Common.Model.Settings;
+using ServiceRequests.Common.Repository.Mongo;
+using UsersApi.Model.Db;
 
 namespace UsersApi.Repository
 {

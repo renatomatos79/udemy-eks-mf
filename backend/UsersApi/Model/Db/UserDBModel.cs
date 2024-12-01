@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+﻿using ServiceRequests.Common.Model.Db;
 using UsersApi.Helpers;
 using UsersApi.Model.Request;
 using UsersApi.Model.Response;

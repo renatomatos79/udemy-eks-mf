@@ -1,6 +1,6 @@
 ﻿using PoliceStationsApi.Model.Db;
-using PoliceStationsApi.Model.Settings;
-using PoliceStationsApi.Repository.Mongo;
+using ServiceRequests.Common.Model.Settings;
+using ServiceRequests.Common.Repository.Mongo;
 
 namespace PoliceStationsApi.Repository
 {

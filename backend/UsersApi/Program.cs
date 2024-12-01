@@ -1,8 +1,8 @@
 using Microsoft.OpenApi.Models;
-using UsersApi.Helpers;
-using UsersApi.Model.Settings;
+using ServiceRequests.Common.Helpers;
+using ServiceRequests.Common.Model.Settings;
+using ServiceRequests.Common.Services;
 using UsersApi.Repository;
-using UsersApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,7 +67,7 @@ builder.Services.AddSingleton<IDbSettngs>(_ =>
     return new DbSettngs 
     { 
         ConnectionString = builder.GetMongoDbConnectionString(), 
-        DBName = "frota" 
+        DBName = "udemy-mf-users" 
     };
 });
 
