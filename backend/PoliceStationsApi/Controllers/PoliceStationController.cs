@@ -9,12 +9,12 @@ namespace PoliceStationsApi.Controllers;
 
 [ApiController]
 [Route("api/police-stations")]
-public class UserController : ControllerBase
+public class PoliceStationController : ControllerBase
 {
-    private readonly ILogger<UserController> _logger;
+    private readonly ILogger<PoliceStationController> _logger;
     private readonly PoliceStationRepository _policeStationRepository;
 
-    public UserController(ILogger<UserController> logger, PoliceStationRepository userRepository)
+    public PoliceStationController(ILogger<PoliceStationController> logger, PoliceStationRepository userRepository)
     {
         _logger = logger;
         _policeStationRepository = userRepository;

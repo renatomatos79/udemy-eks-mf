@@ -77,7 +77,11 @@ builder.Services.AddScoped(sp =>
     return new PoliceStationRepository(dbSettings);
 });
 
-
+builder.Services.AddScoped(sp =>
+{
+    var dbSettings = sp.GetRequiredService<IDbSettngs>();
+    return new VehicleRepository(dbSettings);
+});
 
 var app = builder.Build();
 
