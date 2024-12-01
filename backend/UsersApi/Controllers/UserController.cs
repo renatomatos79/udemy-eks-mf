@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using ServiceRequests.Common.Helpers;
-using UsersApi.Model.Db;
-using UsersApi.Model.Request;
-using UsersApi.Repository;
+using ServiceRequests.Users.Api.Model.Db;
+using ServiceRequests.Users.Api.Model.Request.User;
+using ServiceRequests.Users.Api.Repository;
 
-namespace UsersApi.Controllers;
+namespace ServiceRequests.Users.Api.Controllers;
 
 [ApiController]
 [Route("api/users")]

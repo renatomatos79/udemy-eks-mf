@@ -1,56 +1,55 @@
-﻿using PoliceStationsApi.Model.Request;
-using PoliceStationsApi.Model.Response;
-using ServiceRequests.Common.Model.Db;
+﻿using ServiceRequests.Common.Model.Db;
+using ServiceRequests.PoliceStations.Api.Model.Request.PoliceStation;
+using ServiceRequests.PoliceStations.Api.Model.Response.PoliceStation;
 
-namespace PoliceStationsApi.Model.Db
+namespace ServiceRequests.PoliceStations.Api.Model.Db;
+
+public class PoliceStationDBModel : EntityBase
 {
-    public class PoliceStationDBModel : EntityBase
+    public required string Name { get; set; }
+    public required float Latitute { get; set; }
+    public required float Longitude { get; set; }
+    public required bool IsActive { get; set; }
+
+    public PoliceStationResponseModel ToResponseModel()
     {
-        public required string Name { get; set; }
-        public required float Latitute { get; set; }
-        public required float Longitude { get; set; }
-        public required bool IsActive { get; set; }
-
-        public PoliceStationResponseModel ToResponseModel()
+        return new PoliceStationResponseModel
         {
-            return new PoliceStationResponseModel
-            {
-                Id = Id.ToString(),
-                Name = Name,
-                Latitute = Latitute,
-                Longitude = Longitude,
-                IsActive = IsActive
-            };
+            Id = Id.ToString(),
+            Name = Name,
+            Latitute = Latitute,
+            Longitude = Longitude,
+            IsActive = IsActive
+        };
+    }
+
+    public PoliceStationPatchRequestModel ToUserPatch()
+    {
+        return new PoliceStationPatchRequestModel
+        {
+            IsActive = this.IsActive
+        };
+    }
+
+    public PoliceStationDBModel ApplyPatch(PoliceStationPatchRequestModel request)
+    {
+        if (request.IsActive.HasValue)
+        {
+            this.IsActive = request.IsActive.Value;
         }
 
-        public PoliceStationPatchRequestModel ToUserPatch()
-        {
-            return new PoliceStationPatchRequestModel
-            {
-                IsActive = this.IsActive
-            };
-        }
+        return this;
+    }
 
-        public PoliceStationDBModel ApplyPatch(PoliceStationPatchRequestModel request)
+    public static PoliceStationDBModel FromCreateRequestModel(PoliceStationCreateRequestModel request)
+    {
+        return new PoliceStationDBModel
         {
-            if (request.IsActive.HasValue)
-            {
-                this.IsActive = request.IsActive.Value;
-            }
-
-            return this;
-        }
-
-        public static PoliceStationDBModel FromCreateRequestModel(PoliceStationCreateRequestModel request)
-        {
-            return new PoliceStationDBModel
-            {
-                Id = Guid.NewGuid(),
-                Name = request.Name,
-                Latitute = request.Latitute,
-                Longitude = request.Longitude,
-                IsActive = true,
-            };
-        }
+            Id = Guid.NewGuid(),
+            Name = request.Name,
+            Latitute = request.Latitute,
+            Longitude = request.Longitude,
+            IsActive = true,
+        };
     }
 }

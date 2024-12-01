@@ -2,7 +2,7 @@ using Microsoft.OpenApi.Models;
 using ServiceRequests.Common.Helpers;
 using ServiceRequests.Common.Model.Settings;
 using ServiceRequests.Common.Services;
-using UsersApi.Repository;
+using ServiceRequests.Users.Api.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 

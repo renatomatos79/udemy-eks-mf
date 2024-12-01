@@ -1,8 +1,8 @@
 ﻿using ServiceRequests.Common.Model.Settings;
 using ServiceRequests.Common.Repository.Mongo;
-using UsersApi.Model.Db;
+using ServiceRequests.Users.Api.Model.Db;
 
-namespace UsersApi.Repository
+namespace ServiceRequests.Users.Api.Repository
 {
     public class UserRepository : MongoDbRepository<UserDBModel>
     {

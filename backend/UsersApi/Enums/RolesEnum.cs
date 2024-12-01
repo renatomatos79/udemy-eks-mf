@@ -1,4 +1,3 @@
-﻿namespace UsersApi.Enums
-{
-    public enum RolesEnum { Admin, Operator, Dashboard }   
-}
+﻿namespace ServiceRequests.Users.Api.Enums;
+
+public enum RolesEnum { Admin, Operator, Dashboard }   

@@ -1,41 +1,40 @@
-﻿using PoliceStationsApi.Enums;
+﻿using ServiceRequests.PoliceStations.Api.Enums;
 
-namespace PoliceStationsApi.Helpers
+namespace ServiceRequests.PoliceStations.Api.Helpers;
+
+public class VehicleTypeEnumHelper
 {
-    public class VehicleTypeEnumHelper
+    private readonly string _vehicleType;
+
+    public static VehicleTypeEnumHelper Car = new VehicleTypeEnumHelper(VehicleTypeEnum.Car);
+    public static VehicleTypeEnumHelper Truck = new VehicleTypeEnumHelper(VehicleTypeEnum.Truck);
+    public static VehicleTypeEnumHelper Bike = new VehicleTypeEnumHelper(VehicleTypeEnum.Bike);
+
+    private VehicleTypeEnumHelper(VehicleTypeEnum vt)
     {
-        private readonly string _vehicleType;
+        this._vehicleType = VehicleTypeToString(vt);
+    }
 
-        public static VehicleTypeEnumHelper Car = new VehicleTypeEnumHelper(VehicleTypeEnum.Car);
-        public static VehicleTypeEnumHelper Truck = new VehicleTypeEnumHelper(VehicleTypeEnum.Truck);
-        public static VehicleTypeEnumHelper Bike = new VehicleTypeEnumHelper(VehicleTypeEnum.Bike);
-
-        private VehicleTypeEnumHelper(VehicleTypeEnum vt)
+    private string VehicleTypeToString(VehicleTypeEnum vehicleType)
+    {
+        switch (vehicleType)
         {
-            this._vehicleType = VehicleTypeToString(vt);
+            case VehicleTypeEnum.Car: return "Car";
+            case VehicleTypeEnum.Truck: return "Truck";
+            default: return "Bike";
         }
+    }
 
-        private string VehicleTypeToString(VehicleTypeEnum vehicleType)
-        {
-            switch (vehicleType)
-            {
-                case VehicleTypeEnum.Car: return "Car";
-                case VehicleTypeEnum.Truck: return "Truck";
-                default: return "Bike";
-            }
-        }
+    public override string ToString()
+    {
+        return _vehicleType;
+    }
 
-        public override string ToString()
-        {
-            return _vehicleType;
-        }
-
-        public static VehicleTypeEnumHelper FromString(string vehicleType)
-        {
-            var fmtVehicleType = (vehicleType ?? string.Empty).Trim().ToLower();
-            if (fmtVehicleType == Car.ToString().ToLower()) return Car;
-            if (fmtVehicleType == Truck.ToString().ToLower()) return Truck;
-            return Bike;
-        }
+    public static VehicleTypeEnumHelper FromString(string vehicleType)
+    {
+        var fmtVehicleType = (vehicleType ?? string.Empty).Trim().ToLower();
+        if (fmtVehicleType == Car.ToString().ToLower()) return Car;
+        if (fmtVehicleType == Truck.ToString().ToLower()) return Truck;
+        return Bike;
     }
 }

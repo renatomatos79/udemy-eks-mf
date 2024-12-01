@@ -1,7 +1,8 @@
-﻿using PoliceStationsApi.Model.Db;
+﻿using ServiceRequests.PoliceStations.Api.Model.Db;
 using ServiceRequests.Common.Model.Response;
+using ServiceRequests.PoliceStations.Api.Model.Response.PoliceStation;
 
-namespace PoliceStationsApi.Model.Response
+namespace ServiceRequests.PoliceStations.Api.Model.Response.Vehicle
 {
     public class VehicleResponseModel : BaseResponseModel
     {

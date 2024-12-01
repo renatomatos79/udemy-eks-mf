@@ -1,5 +1,5 @@
 using Microsoft.OpenApi.Models;
-using PoliceStationsApi.Repository;
+using ServiceRequests.PoliceStations.Api.Repository;
 using ServiceRequests.Common.Helpers;
 using ServiceRequests.Common.Model.Settings;
 using ServiceRequests.Common.Services;

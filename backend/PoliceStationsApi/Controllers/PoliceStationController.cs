@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using PoliceStationsApi.Helpers;
-using PoliceStationsApi.Model.Db;
-using PoliceStationsApi.Model.Request;
-using PoliceStationsApi.Repository;
+using ServiceRequests.PoliceStations.Api.Model.Db;
+using ServiceRequests.PoliceStations.Api.Repository;
 using ServiceRequests.Common.Helpers;
+using ServiceRequests.PoliceStations.Api.Model.Request.PoliceStation;
 
-namespace PoliceStationsApi.Controllers;
+namespace ServiceRequests.PoliceStations.Api.Controllers;
 
 [ApiController]
 [Route("api/police-stations")]

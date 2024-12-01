@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using ServiceRequests.Common.Services;
-using UsersApi.Controllers;
-using UsersApi.Model.Request;
-using UsersApi.Model.Response;
-using UsersApi.Repository;
+using ServiceRequests.Users.Api.Constants;
+using ServiceRequests.Users.Api.Model.Request.Token;
+using ServiceRequests.Users.Api.Model.Response.Token;
+using ServiceRequests.Users.Api.Repository;
 
-namespace TokenApi.Controllers;
+namespace ServiceRequests.Users.Api.Controllers;
 
 [ApiController]
 [Route("api/token")]
@@ -39,7 +39,7 @@ public class AuthController : ControllerBase
         if (user.Password != request.Password)
         {
             user.TokenErrorCount++;
-            user.IsBlocked = user.TokenErrorCount > 3;
+            user.IsBlocked = user.TokenErrorCount > TokenConstants.MAX_ERROR_COUNT;
             _userRepository.Update(user);
             return await Task.FromResult(Results.Unauthorized());
         }

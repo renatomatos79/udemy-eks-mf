@@ -1,4 +1,4 @@
-﻿namespace UsersApi.Model.Request
+﻿namespace ServiceRequests.Users.Api.Model.Request.User
 {
     public class UserUpdateRequestModel
     {
