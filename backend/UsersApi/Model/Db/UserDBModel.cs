@@ -14,8 +14,7 @@ namespace UsersApi.Model.Db
         public required bool IsActive { get; set; }
         public required bool IsBlocked { get; set; }
         public required string ImageUrl { get; set; }
-
-        public UserDBModel() { }
+        public required int TokenErrorCount { get; set; }
 
         public UserResponseModel ToResponseModel()
         {
@@ -59,6 +58,7 @@ namespace UsersApi.Model.Db
                 this.IsActive = request.IsActive.Value;
                 if (request.IsActive.Value) {
                     this.IsBlocked = false;
+                    this.TokenErrorCount = 0;
                 }
             }
 
@@ -76,7 +76,8 @@ namespace UsersApi.Model.Db
                 Roles = request.Roles.Select(s => RolesEnumHelper.FromString(s).ToString()).ToArray(),
                 IsBlocked = false,
                 IsActive = true,
-                ImageUrl = request.ImageUrl
+                ImageUrl = request.ImageUrl,
+                TokenErrorCount = 0
             };
         }
     }

@@ -12,7 +12,15 @@ docker build -t users-api:8.0.1 .
 
 => running container
 => DONT FORGET TO BE LOGGED INTO DOCKER DESKTOP
-docker run -d --name users-api -p 8085:8080 -e APP_MONGODB_CS=mongodb://admin:m0ng0d4t4@192.168.1.254:27019 users-api:8.0.1
+docker run -d --name users-api -p 9081:8080 -e APP_MONGODB_CS=mongodb://admin:m0ng0d4t4@192.168.1.254:27019 users-api:8.0.1
 
 => accessing container logs
 docker container logs users-api
+
+=> how to use Patch
+[
+  { "op": "replace", "path": "/Roles", "value": "Dashboard,operator" },
+  { "op": "replace", "path": "/ImageUrl", "value": "https://v4.mui.com/static/images/avatar/1.jpg" },
+  { "op": "replace", "path": "/IsActive", "value": "true" }
+]
+
