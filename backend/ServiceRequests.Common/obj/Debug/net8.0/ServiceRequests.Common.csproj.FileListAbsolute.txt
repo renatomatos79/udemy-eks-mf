@@ -1,12 +1,12 @@
+C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\bin\Debug\net8.0\ServiceRequests.Common.deps.json
+C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\bin\Debug\net8.0\ServiceRequests.Common.dll
+C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\bin\Debug\net8.0\ServiceRequests.Common.pdb
 C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\obj\Debug\net8.0\ServiceRequests.Common.csproj.AssemblyReference.cache
 C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\obj\Debug\net8.0\ServiceRequests.Common.GeneratedMSBuildEditorConfig.editorconfig
 C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\obj\Debug\net8.0\ServiceRequests.Common.AssemblyInfoInputs.cache
 C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\obj\Debug\net8.0\ServiceRequests.Common.AssemblyInfo.cs
 C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\obj\Debug\net8.0\ServiceRequests.Common.csproj.CoreCompileInputs.cache
 C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\obj\Debug\net8.0\ServiceRequests.Common.sourcelink.json
-C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\bin\Debug\net8.0\ServiceRequests.Common.deps.json
-C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\bin\Debug\net8.0\ServiceRequests.Common.dll
-C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\bin\Debug\net8.0\ServiceRequests.Common.pdb
 C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\obj\Debug\net8.0\ServiceRequests.Common.dll
 C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\obj\Debug\net8.0\refint\ServiceRequests.Common.dll
 C:\projetos\udemy-eks-mf\backend\ServiceRequests.Common\obj\Debug\net8.0\ServiceRequests.Common.pdb

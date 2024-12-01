@@ -20,4 +20,4 @@ COPY --from=build /app/out ./
 EXPOSE 80
 
 # Command to run the application
-ENTRYPOINT ["dotnet", "PoliceStationsApi.dll"]
+ENTRYPOINT ["dotnet", "ServiceRequests.PoliceStations.Api.dll"]
