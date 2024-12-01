@@ -4,11 +4,9 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import SearchIcon from '@material-ui/icons/Search';
 import FilterIcon from '@material-ui/icons/Search';
-import { Box, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { makeStyles, useTheme, ThemeProvider } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import UserTableRow from '@/components/organisms/user/table/UserTableRow';
 import UserTableHeader from '@/components/organisms/user/table/UserTableHeader';
 import { EmailIcon, SecurityIcon } from '@/components/atoms/icons/SvgIcons';
@@ -41,19 +39,26 @@ export default function FixedContainer() {
 
     const classes = useStyles();
 
+    const [rows, setRows] = React.useState([]);
 
-    const rows = [
-        { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-        { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-        { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-        { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-        { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-        { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-        { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-        { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-        { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-    ];
+    // Function to fetch data from the API
+    const fetchUsers = async () => {
+        try {
+            const response = await fetch("http://localhost:5055/api/users");
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            setRows(data); // Update rows with fetched data
+        } catch (error) {
+            console.error("Error fetching users:", error);
+        }
+    };
 
+    // Fetch users on component mount
+    React.useEffect(() => {
+        fetchUsers();
+    }, []);
 
     return (
         <ThemeProvider theme={theme}>
@@ -80,16 +85,18 @@ export default function FixedContainer() {
 
                         <Grid container item xs={12} direction="column" >
                             <UserTableHeader />
-                            <UserTableRow />
-                            <UserTableRow />
-                            <UserTableRow />
-                            <UserTableRow />
-                            <UserTableRow />
-                            <UserTableRow />
-                            <UserTableRow />
-                            <UserTableRow />
-                            <UserTableRow />
-                            <UserTableRow />
+                            {rows.map((row) => (
+                                <UserTableRow
+                                    key={row.id} // Use unique key for each row
+                                    id={row.id}
+                                    name={row.name}
+                                    email={row.email}
+                                    roles={row.roles}
+                                    isBlocked={row.isBlocked}
+                                    isActive={row.isActive}
+                                    imageUrl={row.imageUrl}
+                                />
+                            ))}
                         </Grid>
 
                     </Container>

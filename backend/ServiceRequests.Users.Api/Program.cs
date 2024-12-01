@@ -4,6 +4,8 @@ using ServiceRequests.Common.Model.Settings;
 using ServiceRequests.Common.Services;
 using ServiceRequests.Users.Api.Repository;
 
+const string ALLOW_ANY_REQUEST = "ALLOW_ALL";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,6 +22,14 @@ builder.Services.AddScoped<ITokenService, TokenService>(sp =>
         issuer: builder.GetSecretIssuer(),
         audience: builder.GetSecretAudience()
     );
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(ALLOW_ANY_REQUEST, builder =>
+    {
+        builder.WithOrigins("*").AllowAnyHeader().WithMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
+    });
 });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -87,4 +97,5 @@ app.UseSwaggerUI();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.UseCors(ALLOW_ANY_REQUEST);
 app.Run();

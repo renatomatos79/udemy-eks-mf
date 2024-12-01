@@ -8,7 +8,7 @@ import { CheckedIcon } from '@/components/atoms/icons/SvgIcons';
 import { makeStyles, useTheme, ThemeProvider } from '@material-ui/core/styles';
 import StyledCheckbox from '@/components/atoms/checkbox/StyledCheckbox';
 
-export default function UserTableRow({ user }) {
+export default function UserTableRow({ id, name, email, roles, isBlocked, isActive, imageUrl }) {
 
     const useStyles = makeStyles((theme) => ({
         paper: {
@@ -30,24 +30,26 @@ export default function UserTableRow({ user }) {
                     <StyledCheckbox />
                 </Grid>
                 <Grid item xs={1}>
-                    <Avatar alt="Remy Sharp" src="https://v4.mui.com/static/images/avatar/1.jpg" />
+                    <Avatar alt="Remy Sharp" src={imageUrl} />
                 </Grid>
                 <Grid container item xs={2} justifyContent="flex-start">
-                    Renato Matos
+                    {name}
                 </Grid>
-                <Grid container item xs={3} justifyContent="flex-start">
-                    renato.matos79gmail.com
+                <Grid container item xs={2} justifyContent="flex-start">
+                    {email}
                 </Grid>
                 <Grid container item xs={2} justifyContent="flex-start">
                     <UserRoles />
                 </Grid>
-                <Grid container item xs={1} justifyContent="center" direction="column">
-                    <div>
-                        <CheckedIcon color="green" />
-                    </div>
-                    <div>
-                        Active
-                    </div>
+                <Grid container item xs={1} justifyContent="center">
+                    <CheckedIcon color={isActive ? "green" : "red"} />
+                </Grid>
+                <Grid container item xs={1} justifyContent="center">
+                    {
+                        isBlocked && (
+                            <CheckedIcon color="gray" />
+                        )
+                    }                   
                 </Grid>
                 <Grid container item xs={2} justifyContent="center">
                     <DropDownButton />

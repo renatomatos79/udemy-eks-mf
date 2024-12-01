@@ -35,7 +35,7 @@ export default function UserTableHeader() {
                         Nome
                     </TableColumnHeader>
                 </Grid>
-                <Grid container item xs={3} alignItems="center">
+                <Grid container item xs={2} alignItems="center">
                     <TableColumnHeader enabledSort={true}>
                         <EmailIcon /> Email
                     </TableColumnHeader>
@@ -47,7 +47,12 @@ export default function UserTableHeader() {
                 </Grid>
                 <Grid container item xs={1} alignItems="flex-start">
                     <TableColumnHeader >
-                        <UserIcon /> Status
+                        Active
+                    </TableColumnHeader>
+                </Grid>
+                <Grid container item xs={1} alignItems="flex-start">
+                    <TableColumnHeader >
+                        Blocked
                     </TableColumnHeader>
                 </Grid>
                 <Grid container item xs={2} justifyContent="center">

@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{175CEA21-E0C4-481F-9C20-E284BBAD420E}|ServiceRequests.Users.Api\\ServiceRequests.Users.Api.csproj|solutionrelative:servicerequests.users.api\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94859E6B-CF0E-4569-A4F3-BF3A73032974}|ServiceRequests.PoliceStations.Api\\ServiceRequests.PoliceStations.Api.csproj|c:\\projetos\\udemy-eks-mf\\backend\\servicerequests.policestations.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{94859E6B-CF0E-4569-A4F3-BF3A73032974}|ServiceRequests.PoliceStations.Api\\ServiceRequests.PoliceStations.Api.csproj|solutionrelative:servicerequests.policestations.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{175CEA21-E0C4-481F-9C20-E284BBAD420E}|ServiceRequests.Users.Api\\ServiceRequests.Users.Api.csproj|c:\\projetos\\udemy-eks-mf\\backend\\servicerequests.users.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{175CEA21-E0C4-481F-9C20-E284BBAD420E}|ServiceRequests.Users.Api\\ServiceRequests.Users.Api.csproj|solutionrelative:servicerequests.users.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{175CEA21-E0C4-481F-9C20-E284BBAD420E}|ServiceRequests.Users.Api\\ServiceRequests.Users.Api.csproj|c:\\projetos\\udemy-eks-mf\\backend\\servicerequests.users.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,15 +34,28 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "readme.txt",
+              "DocumentMoniker": "C:\\projetos\\udemy-eks-mf\\backend\\ServiceRequests.Users.Api\\readme.txt",
+              "RelativeDocumentMoniker": "ServiceRequests.Users.Api\\readme.txt",
+              "ToolTip": "C:\\projetos\\udemy-eks-mf\\backend\\ServiceRequests.Users.Api\\readme.txt",
+              "RelativeToolTip": "ServiceRequests.Users.Api\\readme.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-12-01T18:20:52.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\projetos\\udemy-eks-mf\\backend\\ServiceRequests.PoliceStations.Api\\Dockerfile",
-              "RelativeDocumentMoniker": "ServiceRequests.PoliceStations.Api\\Dockerfile",
-              "ToolTip": "C:\\projetos\\udemy-eks-mf\\backend\\ServiceRequests.PoliceStations.Api\\Dockerfile",
-              "RelativeToolTip": "ServiceRequests.PoliceStations.Api\\Dockerfile",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-12-01T17:10:48.342Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\projetos\\udemy-eks-mf\\backend\\ServiceRequests.Users.Api\\Program.cs",
+              "RelativeDocumentMoniker": "ServiceRequests.Users.Api\\Program.cs",
+              "ToolTip": "C:\\projetos\\udemy-eks-mf\\backend\\ServiceRequests.Users.Api\\Program.cs",
+              "RelativeToolTip": "ServiceRequests.Users.Api\\Program.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAQwGMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T18:16:30.977Z",
               "EditorCaption": ""
             },
             {
@@ -56,19 +69,6 @@
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-12-01T17:10:38.376Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "readme.txt",
-              "DocumentMoniker": "C:\\projetos\\udemy-eks-mf\\backend\\ServiceRequests.Users.Api\\readme.txt",
-              "RelativeDocumentMoniker": "ServiceRequests.Users.Api\\readme.txt",
-              "ToolTip": "C:\\projetos\\udemy-eks-mf\\backend\\ServiceRequests.Users.Api\\readme.txt",
-              "RelativeToolTip": "ServiceRequests.Users.Api\\readme.txt",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAB7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-01T17:08:01.522Z",
               "EditorCaption": ""
             }
           ]
