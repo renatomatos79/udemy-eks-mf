@@ -44,7 +44,7 @@ export default function FixedContainer() {
     // Function to fetch data from the API
     const fetchUsers = async () => {
         try {
-            const response = await fetch("http://localhost:5055/api/users");
+            const response = await fetch("http://3.84.216.40:8091/api/users");
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

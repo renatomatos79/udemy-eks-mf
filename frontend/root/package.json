@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",
-    "docker": "webpack serve --config config/webpack.docker.js",
+    "docker": "cross-env DS_RH_ADMIN=$UDEMY_DS_RH_ADMIN DS_RH_AUTH=$UDEMY_DS_RH_AUTH DS_RH_DASHBOARD=$UDEMY_DS_RH_DASHBOARD DS_PUBLIC_PATH=$UDEMY_DS_PUBLIC_PATH webpack serve --config config/webpack.docker.js",
     "build": "webpack --config config/webpack.prod.js"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.0",
+    "cross-env": "^7.0.3",
     "html-webpack-plugin": "^4.5.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.88.0",

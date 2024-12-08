@@ -1,5 +1,5 @@
 # Use a base Node.js image
-FROM node:18-alpine
+FROM alpine:3.19
 
 # Set a maintainer label (optional)
 LABEL maintainer="Renato Matos"
@@ -7,9 +7,12 @@ LABEL maintainer="Renato Matos"
 # Set the working directory
 WORKDIR /app
 
+# Install Node.js, npm, and build tools
+RUN apk add --no-cache nodejs npm python3 build-base
+
 # Copy package.json and install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm install --dry-run
 
 # Copy the rest of your project files
 COPY . .

@@ -18,7 +18,7 @@ const devConfig = {
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
-        marketing: 'marketing@http://localhost:8081/remoteEntry.js',
+        admin: 'admin@http://localhost:8081/remoteEntry.js',
         auth: 'auth@http://localhost:8082/remoteEntry.js',
         dashboard: 'dashboard@http://localhost:8083/remoteEntry.js',
       },
@@ -27,4 +27,8 @@ const devConfig = {
   ],
 };
 
-module.exports = merge(commonConfig, devConfig);
+const mergeResult = merge(commonConfig, devConfig);
+console.log('mergeResult: ', mergeResult)
+console.log('mergeResult: ', JSON.stringify(mergeResult))
+
+module.exports = mergeResult;

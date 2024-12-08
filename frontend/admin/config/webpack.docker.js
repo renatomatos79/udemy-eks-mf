@@ -15,13 +15,16 @@ const devConfig = {
     historyApiFallback: {
       historyApiFallback: true,
     },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'marketing',
+      name: 'admin',
       filename: 'remoteEntry.js',
       exposes: {
-        './MarketingApp': './src/bootstrap',
+        './AdminApp': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),
