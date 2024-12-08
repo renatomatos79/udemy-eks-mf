@@ -6,7 +6,7 @@ const packageJson = require('../package.json');
 const devConfig = {
   mode: 'development',
   output: {
-    publicPath: 'http://localhost:8084/',
+    publicPath: 'http://3.84.216.40:8084/',
   },
   devServer: {
     port: 8084,
@@ -18,9 +18,9 @@ const devConfig = {
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
-        admin: 'admin@http://localhost:8081/remoteEntry.js',
-        auth: 'auth@http://localhost:8082/remoteEntry.js',
-        dashboard: 'dashboard@http://localhost:8083/remoteEntry.js',
+        admin: 'admin@http://3.84.216.40:8081/remoteEntry.js',
+        auth: 'auth@http://3.84.216.40:8082/remoteEntry.js',
+        dashboard: 'dashboard@http://3.84.216.40:8083/remoteEntry.js',
       },
       shared: packageJson.dependencies,
     }),
