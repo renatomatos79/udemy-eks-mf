@@ -10,9 +10,13 @@ const devConfig = {
     publicPath: 'http://localhost:8082/',
   },
   devServer: {
+    host: '0.0.0.0',
     port: 8082,
     historyApiFallback: {
       historyApiFallback: true,
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
     },
   },
   plugins: [
