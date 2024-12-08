@@ -7,7 +7,7 @@ const packageJson = require('../package.json');
 const devConfig = {
   mode: 'development',
   output: {
-    publicPath: 'http://localhost:8082/',
+    publicPath: 'http://3.84.216.40:8082/',
   },
   devServer: {
     host: '0.0.0.0',
