@@ -1,21 +1,8 @@
-const path = require('path');
+const common = require('./webpack.common.config');
+const { merge } = require('webpack-merge');
 
-module.exports = {
-  entry: {
-    math: {
-      import: './src/lib/math.js'
-    },
-    main: {
-      import: './src/index.js',
-      dependOn: 'math',
-    },
-  },
-  mode: 'development',
-  target: 'node',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
-  },
+module.exports = merge(common, {
+  mode: 'production',
   optimization: {
     splitChunks: {
       chunks: 'all', // Ensures splitting applies to both dynamically imported and statically imported modules.
@@ -33,4 +20,4 @@ module.exports = {
       },
     },
   },
-}
+})
