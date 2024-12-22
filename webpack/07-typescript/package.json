@@ -1,0 +1,26 @@
+{
+  "name": "01-blank-project",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "build-dev": "webpack --config config/webpack.dev.config.js",
+    "build-prod": "webpack --config config/webpack.prod.config.js",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "start": "npm run build-dev && node dist/app.bundle.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-merge": "^6.0.1"
+  }
+}
