@@ -5,7 +5,8 @@
   "scripts": {
     "build-dev": "webpack --config config/webpack.dev.config.js",
     "build-prod": "webpack --config config/webpack.prod.config.js",
-    "start": "npm run build-dev && node dist/main.bundle.js"
+    "start": "npm run build-dev && node dist/main.bundle.js",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +14,9 @@
   "type": "commonjs",
   "description": "",
   "devDependencies": {
+    "vitest": "^2.1.8",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "webpack-merge": "^6.0.1"
-  }  
+  }
 }

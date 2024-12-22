@@ -2,11 +2,11 @@ const path = require('path');
 
 const config = {
   entry: {
-    cpf: {
-      import: './src/lib/cpf.js'
+    isCPF: {
+      import: './src/lib/isCPF/index.mjs'
     },
-    cnpj: {
-      import: './src/lib/cnpj.js'
+    isCNPJ: {
+      import: './src/lib/isCNPJ/index.mjs'
     },
   },
   target: 'node',

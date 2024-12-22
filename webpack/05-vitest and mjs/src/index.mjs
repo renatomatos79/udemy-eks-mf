@@ -1,5 +1,4 @@
-const isCPF = require('./lib/isCPF');
-const isCNPJ = require('./lib/isCNPJ');
+import { isCPF, isCNPJ } from './lib/index.mjs';
 
 const CPFS = [
     // Valid CPFs
