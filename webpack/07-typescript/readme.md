@@ -22,7 +22,19 @@ npm install --save-dev typescript@5.7.2 ts-loader@ts-loader
 
 # "target es5": The code will be transpiled to ECMAScript 5 (ES5), ensuring compatibility with older environments like older browsers.
 
-# "moduleResolution node": Supports extensions like .js, .ts, .json, etc. This is the most common setting for Node.js and frontend applications using modern module bundlers.
+# "moduleResolution node10": Supports extensions like .js, .ts, .json, etc. This is the most common setting for Node.js and frontend applications using modern module bundlers.
+
+# "esModuleInterop true": With flag esModuleInterop we can import CommonJS modules in compliance with es6 modules spec. Now our import code looks like this:
+
+```sh
+// index.ts file in our app
+import moment from 'moment'
+moment(); // compliant with es6 module spec
+
+// transpiled js with esModuleInterop (simplified):
+const moment = __importDefault(require('moment'));
+moment.default();
+```
 
 # Update webpack.common.config.js to deal with typescript files
 ```sh
@@ -38,6 +50,7 @@ npm install --save-dev typescript@5.7.2 ts-loader@ts-loader
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
+  target: 'node10'
 ```
 
 # Update webpack.dev.config.js to generate files using "cjs" extension, in order to be compatible with commonJS modules

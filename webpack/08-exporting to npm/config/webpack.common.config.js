@@ -27,7 +27,6 @@ const config = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  target: 'node10'
 };
 
 export default config;
