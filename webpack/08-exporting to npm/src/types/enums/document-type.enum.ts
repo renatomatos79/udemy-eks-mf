@@ -1,0 +1,1 @@
+export enum DocumentType { CNPJ, CPF, Unknown }

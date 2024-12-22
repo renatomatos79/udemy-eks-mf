@@ -7,8 +7,7 @@ const config = merge(common, {
     library: {
       type: 'commonjs2', // Use CommonJS2 for Node.js compatibility
     },
-  }, 
-  target: 'node10', 
+  }   
 })
 
 export default config;

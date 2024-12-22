@@ -1,4 +1,3 @@
-import { clear } from 'console';
 import path from 'path';
 
 const config = {
@@ -25,8 +24,9 @@ const config = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js']
   },
+  target: 'node10',
 };
 
 export default config;

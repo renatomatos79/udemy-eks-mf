@@ -1,10 +1,10 @@
 {
   "name": "01-blank-project",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "dist/index.bundle.js",
   "scripts": {
     "build-dev": "webpack --config config/webpack.dev.config.js",
-    "build-prod": "webpack --config config/webpack.prod.config.js",
+    "build-prod": "tsc && webpack --config config/webpack.prod.config.js",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "start": "npm run build-dev && node dist/app.bundle.cjs"
